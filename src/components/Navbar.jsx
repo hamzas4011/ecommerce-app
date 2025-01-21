@@ -5,14 +5,18 @@ import '../styles/Navbar.css';
 function Navbar() {
     return (
         <nav className="navbar">
-        <div className="navbar-container">
-        <ul className="navbar-links">
-            <li>Home</li>
-            <li>Menu</li>
-        </ul>
-        </div>
+            <div className="navbar-container">
+                <ul className="navbar-links">
+                    <li>
+                        <Link to="/" className="navbar-link">Home</Link>
+                    </li>
+                    <li>
+                        <Link to="/menu" className="navbar-link">Menu</Link>
+                    </li>
+                </ul>
+            </div>
         </nav>
-    )
+    );
 }
 
 export default Navbar;
