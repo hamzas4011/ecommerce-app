@@ -20,7 +20,7 @@ function Menu() {
                         <img src={product.image} alt={product.name} className="menu-item-image" />
                         <h2 className="menu-item-name">{product.name}</h2>
                         <p className="menu-item-price">{product.price}</p>
-                        <button className="menu-item-button">Add to Basket</button>
+                        <button className="menu-item-button">Add to basket</button>
                     </div>
                 ))}
             </div>
