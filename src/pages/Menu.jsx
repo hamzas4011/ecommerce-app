@@ -13,7 +13,7 @@ function Menu() {
 
     return (
         <div className="menu">
-            <h1 className="menu-title">Our Gadgets</h1>
+            <h1 className="menu-title">EXPLORE OUR GADGETS</h1>
             <div className="menu-grid">
                 {products.map(product => (
                     <div key={product.id} className="menu-item">
