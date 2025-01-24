@@ -12,9 +12,9 @@ function Footer() {
             </div>
             <div className="footer-contact">
                 <h3 className="footer-title">Contact Us</h3>
-                <p className="footer-text">Email: support@technova.com</p>
-                <p className="footer-text">Phone: 123-4567</p>
-                <p className="footer-text">Address: 123 Innovation Drive, Norway</p>
+                <p className="footer-text">📩 support@technova.com</p>
+                <p className="footer-text">📞 123-4567</p>
+                <p className="footer-text">🏠 123 Bergen, Norway</p>
             </div>
         </footer>
     );
