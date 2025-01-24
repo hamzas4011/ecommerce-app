@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/Menu.css';
+import MenuItem from '../components/MenuItem';
 
 function Menu() {
     const products = [
@@ -13,15 +14,15 @@ function Menu() {
 
     return (
         <div className="menu">
-            <h1 className="menu-title">EXPLORE OUR GADGETS</h1>
+            <h1 className="menu-title">Our Gadgets</h1>
             <div className="menu-grid">
                 {products.map(product => (
-                    <div key={product.id} className="menu-item">
-                        <img src={product.image} alt={product.name} className="menu-item-image" />
-                        <h2 className="menu-item-name">{product.name}</h2>
-                        <p className="menu-item-price">{product.price}</p>
-                        <button className="menu-item-button">Add to basket</button>
-                    </div>
+                    <MenuItem
+                        key={product.id}
+                        name={product.name}
+                        price={product.price}
+                        image={product.image}
+                    />
                 ))}
             </div>
         </div>
