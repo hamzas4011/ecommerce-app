@@ -13,12 +13,12 @@
 
 .footer-about {
     flex: 1;
-    margin: 10px 50px 10px 60px;
+    margin: 10px 80px 10px 130px;
 }
 
 .footer-contact {
     flex: 1;
-    margin: 10px 30px;
+    margin: 10px 30px 0px 100px;
 }
 
 .footer-title {
