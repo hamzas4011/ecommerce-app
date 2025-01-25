@@ -4,12 +4,12 @@ import MenuItem from '../components/MenuItem';
 
 function Menu() {
     const products = [
-        { id: 1, name: 'Gadget 1', price: '$99', image: '/images/gadget-1.jpg' },
-        { id: 2, name: 'Gadget 2', price: '$199', image: '/images/gadget-2.jpg' },
-        { id: 3, name: 'Gadget 3', price: '$299', image: '/images/gadget-3.jpg' },
-        { id: 4, name: 'Gadget 4', price: '$399', image: '/images/gadget-4.jpg' },
-        { id: 5, name: 'Gadget 5', price: '$499', image: '/images/gadget-5.jpg' },
-        { id: 6, name: 'Gadget 6', price: '$599', image: '/images/gadget-6.jpg' },
+        { id: 1, name: 'Gaming controller', price: '$99', image: '/images/gadget-1.jpg' },
+        { id: 2, name: 'Headset', price: '$199', image: '/images/gadget-2.jpg' },
+        { id: 3, name: 'Drone', price: '$299', image: '/images/gadget-3.jpg' },
+        { id: 4, name: 'Camera', price: '$399', image: '/images/gadget-4.jpg' },
+        { id: 5, name: 'VR glasses', price: '$499', image: '/images/gadget-5.jpg' },
+        { id: 6, name: 'Phone', price: '$599', image: '/images/gadget-6.jpg' },
     ];
 
     const [searchTerm, setSearchTerm] = useState('');
