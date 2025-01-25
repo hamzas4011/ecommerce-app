@@ -6,6 +6,7 @@ function Navbar() {
     return (
         <nav className="navbar">
             <div className="navbar-container">
+                <div className="navbar-logo">TechNova</div>
                 <ul className="navbar-links">
                     <li>
                         <Link to="/" className="navbar-link">Home</Link>
