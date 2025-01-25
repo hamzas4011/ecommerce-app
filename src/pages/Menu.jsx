@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/Menu.css';
 import MenuItem from '../components/MenuItem';
 
@@ -12,11 +12,26 @@ function Menu() {
         { id: 6, name: 'Gadget 6', price: '$599', image: '/images/gadget-6.jpg' },
     ];
 
+    const [searchTerm, setSearchTerm] = useState('');
+
+    const filteredProducts = products.filter(product =>
+        product.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
     return (
         <div className="menu">
             <h1 className="menu-title">Our Gadgets</h1>
+            <div className="searchbar-container">
+                <input
+                    type="text"
+                    placeholder="Search gadgets..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="searchbar"
+                />
+            </div>
             <div className="menu-grid">
-                {products.map(product => (
+                {filteredProducts.map(product => (
                     <MenuItem
                         key={product.id}
                         name={product.name}
@@ -30,3 +45,4 @@ function Menu() {
 }
 
 export default Menu;
+
