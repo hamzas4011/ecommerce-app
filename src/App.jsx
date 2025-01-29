@@ -18,12 +18,14 @@ function App() {
         <Router>
             <div className="app">
                 <Navbar cartSize={cart.length} />
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/menu" element={<Menu addToCart={addToCart} />} />
-                    <Route path="/cart" element={<Cart cart={cart} />} />
-                </Routes>
-                <Footer />
+                <div className="main-content">
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/menu" element={<Menu addToCart={addToCart} />} />
+                        <Route path="/cart" element={<Cart cart={cart} />} />
+                    </Routes>
+                </div>
+                <Footer />  {/* ✅ Moved Footer outside of Routes */}
             </div>
         </Router>
     );
