@@ -1,0 +1,11 @@
+.cart {
+    padding: 40px;
+    background-color: #f9f9f9;
+    text-align: center;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
