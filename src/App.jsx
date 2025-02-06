@@ -25,7 +25,7 @@ function App() {
                         <Route path="/cart" element={<Cart cart={cart} />} />
                     </Routes>
                 </div>
-                <Footer />  {/* ✅ Moved Footer outside of Routes */}
+                <Footer />
             </div>
         </Router>
     );
