@@ -1,11 +1,10 @@
-/* Ensures the entire app stays full height */
+
 .app {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-/* Keeps the content area stable */
 .main-content {
     flex-grow: 1;
     display: flex;
@@ -14,7 +13,6 @@
     justify-content: flex-start;
 }
 
-/* Standardize global styles */
 body, html {
     margin: 0;
     padding: 0;
