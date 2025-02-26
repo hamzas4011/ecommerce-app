@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Menu from './pages/Menu';
 import Cart from './pages/Cart';
-import '.App.css';
+import './App.css';
 
 function App() {
     const [cart, setCart] = useState([]);
