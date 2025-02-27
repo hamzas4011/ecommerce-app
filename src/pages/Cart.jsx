@@ -1,8 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/Cart.css';
 
-function Cart({ cart, removeFromCart }) {
-    const totalPrice = cart.reduce((sum, item) => sum + parseFloat(item.price.replace('$', '')), 0);
+function Cart({ cart, setCart }) {
+    // Update quantity in the cart
+    const updateQuantity = (item, amount) => {
+        const updatedCart = cart.map(cartItem =>
+            cartItem.name === item.name
+                ? { ...cartItem, quantity: Math.max(cartItem.quantity + amount, 1) }
+                : cartItem
+        );
+        setCart(updatedCart);
+    };
+
+    // Remove item from the cart
+    const removeFromCart = (item) => {
+        setCart(cart.filter(cartItem => cartItem.name !== item.name));
+    };
+
+    // Calculate total price dynamically
+    const totalPrice = cart.reduce(
+        (sum, item) => sum + item.quantity * parseFloat(item.price.replace('$', '')),
+        0
+    );
 
     return (
         <div className="cart">
@@ -16,11 +35,17 @@ function Cart({ cart, removeFromCart }) {
                             <img src={item.image} alt={item.name} className="cart-item-image" />
                             <div className="cart-item-details">
                                 <h2>{item.name}</h2>
-                                <p>{item.price}</p>
-                                <button className="remove-button" onClick={() => removeFromCart(item)}>
-                                    Remove
-                                </button>
+                                <p>Price: {item.price}</p>
+                                <div className="quantity-controls">
+                                    <button className="quantity-btn" onClick={() => updateQuantity(item, -1)}>-</button>
+                                    <span className="quantity">{item.quantity}</span>
+                                    <button className="quantity-btn" onClick={() => updateQuantity(item, 1)}>+</button>
+                                </div>
+                                <p>Subtotal: ${(item.quantity * parseFloat(item.price.replace('$', ''))).toFixed(2)}</p>
                             </div>
+                            <button className="remove-button" onClick={() => removeFromCart(item)}>
+                                Remove
+                            </button>
                         </div>
                     ))}
                 </div>
