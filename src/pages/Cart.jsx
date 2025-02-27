@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import '../styles/Cart.css';
 
 function Cart({ cart, setCart }) {
-    // Update quantity in the cart
     const updateQuantity = (item, amount) => {
         const updatedCart = cart.map(cartItem =>
             cartItem.name === item.name
@@ -12,12 +11,10 @@ function Cart({ cart, setCart }) {
         setCart(updatedCart);
     };
 
-    // Remove item from the cart
     const removeFromCart = (item) => {
         setCart(cart.filter(cartItem => cartItem.name !== item.name));
     };
 
-    // Calculate total price dynamically
     const totalPrice = cart.reduce(
         (sum, item) => sum + item.quantity * parseFloat(item.price.replace('$', '')),
         0
