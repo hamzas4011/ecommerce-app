@@ -6,7 +6,7 @@ function Cart({ cart, setCart }) {
         setCart((prevCart) =>
             prevCart.map((cartItem) =>
                 cartItem.name === item.name
-                    ? { ...cartItem, quantity: Math.max(cartItem.quantity + amount, 1) }
+                    ? { ...cartItem, quantity: Math.max(1, cartItem.quantity + amount) }
                     : cartItem
             )
         );
