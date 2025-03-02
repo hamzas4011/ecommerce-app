@@ -1,7 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/Cart.css";
 
 function Cart({ cart, setCart }) {
+    const navigate = useNavigate();
+
     const updateQuantity = (item, amount) => {
         setCart((prevCart) =>
             prevCart.map((cartItem) =>
@@ -57,7 +60,7 @@ function Cart({ cart, setCart }) {
                 <div className="cart-footer">
                     <h2>Total: ${totalPrice.toFixed(2)}</h2>
                     <div className="cart-actions">
-                        <button className="continue-shopping" onClick={() => window.location.href = "/menu"}>🛍️ Continue Shopping</button>
+                        <button className="continue-shopping" onClick={() => navigate("/menu")}>🛍️ Continue Shopping</button>
                         <button className="checkout-btn" onClick={handleCheckout}>✅ Checkout</button>
                     </div>
                 </div>
