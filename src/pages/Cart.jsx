@@ -38,9 +38,7 @@ function Cart({ cart, setCart }) {
                                 </div>
                                 <p>Subtotal: ${(item.quantity * parseFloat(item.price.replace("$", ""))).toFixed(2)}</p>
                             </div>
-                            <button className="remove-button" onClick={() => removeFromCart(item)}>
-                                ❌
-                            </button>
+                            <button className="remove-button" onClick={() => removeFromCart(item)}>❌</button>
                         </div>
                     ))}
                 </div>
@@ -49,12 +47,8 @@ function Cart({ cart, setCart }) {
                 <div className="cart-footer">
                     <h2>Total: ${totalPrice.toFixed(2)}</h2>
                     <div className="cart-actions">
-                        <button className="continue-shopping" onClick={() => window.location.href = "/menu"}>
-                            🛍️ Continue Shopping
-                        </button>
-                        <button className="checkout-btn" onClick={() => alert("Proceeding to checkout...")}>
-                            ✅ Checkout
-                        </button>
+                        <button className="continue-shopping" onClick={() => window.location.href = "/menu"}>🛍️ Continue Shopping</button>
+                        <button className="checkout-btn" onClick={() => alert("Proceeding to checkout...")}>✅ Checkout</button>
                     </div>
                 </div>
             )}
