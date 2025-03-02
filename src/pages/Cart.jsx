@@ -18,6 +18,16 @@ function Cart({ cart, setCart }) {
 
     const totalPrice = cart.reduce((sum, item) => sum + item.quantity * parseFloat(item.price.replace("$", "")), 0);
 
+    const handleCheckout = () => {
+        if (cart.length === 0) {
+            alert("Your cart is empty.");
+            return;
+        }
+
+        alert("Payment successful! Thank you for your purchase.");
+        setCart([]);
+    };
+
     return (
         <div className="cart">
             <h1>Your Basket</h1>
@@ -48,7 +58,7 @@ function Cart({ cart, setCart }) {
                     <h2>Total: ${totalPrice.toFixed(2)}</h2>
                     <div className="cart-actions">
                         <button className="continue-shopping" onClick={() => window.location.href = "/menu"}>🛍️ Continue Shopping</button>
-                        <button className="checkout-btn" onClick={() => alert("Proceeding to checkout...")}>✅ Checkout</button>
+                        <button className="checkout-btn" onClick={handleCheckout}>✅ Checkout</button>
                     </div>
                 </div>
             )}

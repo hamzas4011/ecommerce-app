@@ -67,7 +67,7 @@
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.3s ease-in-out;
 }
 
 .quantity-btn:hover {
@@ -80,7 +80,7 @@
 }
 
 .remove-button {
-    background: #e63946;
+    background: #6c757d;
     color: white;
     border: none;
     padding: 8px 12px;
@@ -90,7 +90,7 @@
 }
 
 .remove-button:hover {
-    background: #c62828;
+    background: #5a6268;
 }
 
 .cart-footer {
