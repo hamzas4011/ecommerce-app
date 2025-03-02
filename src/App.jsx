@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -7,14 +7,21 @@ import Menu from './pages/Menu';
 import Cart from './pages/Cart';
 
 function App() {
-    const [cart, setCart] = useState([]);
+    const [cart, setCart] = useState(() => {
+        const savedCart = localStorage.getItem("cart");
+        return savedCart ? JSON.parse(savedCart) : [];
+    });
+
+    useEffect(() => {
+        localStorage.setItem("cart", JSON.stringify(cart));
+    }, [cart]);
 
     const addToCart = (item) => {
         setCart((prevCart) => {
-            const existingItem = prevCart.find(cartItem => cartItem.name === item.name);
+            const existingItem = prevCart.find(cartItem => cartItem.id === item.id);
             return existingItem
                 ? prevCart.map(cartItem =>
-                    cartItem.name === item.name
+                    cartItem.id === item.id
                         ? { ...cartItem, quantity: cartItem.quantity + 1 }
                         : cartItem
                 )
