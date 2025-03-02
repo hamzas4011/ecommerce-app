@@ -80,7 +80,7 @@
 }
 
 .remove-button {
-    background: #ff4d4d;
+    background: #e63946;
     color: white;
     border: none;
     padding: 8px 12px;
@@ -90,7 +90,7 @@
 }
 
 .remove-button:hover {
-    background: #cc0000;
+    background: #c62828;
 }
 
 .cart-footer {
@@ -109,9 +109,10 @@
     margin-top: 20px;
 }
 
-.continue-shopping,
-.checkout-btn {
-    padding: 10px 20px;
+.continue-shopping {
+    background: #1d3557;
+    color: white;
+    padding: 12px 20px;
     font-size: 16px;
     font-weight: bold;
     border: none;
@@ -120,20 +121,22 @@
     transition: background 0.3s ease-in-out;
 }
 
-.continue-shopping {
-    background: #28a745;
-    color: white;
-}
-
 .continue-shopping:hover {
-    background: #218838;
+    background: #457b9d;
 }
 
 .checkout-btn {
-    background: #ff9800;
+    background: #2a9d8f;
     color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
 }
 
 .checkout-btn:hover {
-    background: #e68900;
+    background: #21867a;
 }
