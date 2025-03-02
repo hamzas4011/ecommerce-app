@@ -10,29 +10,27 @@ function App() {
     const [cart, setCart] = useState([]);
 
     const addToCart = (item) => {
-        setCart([...cart, item]);
-    };
-
-    const removeFromCart = (itemToRemove) => {
         setCart((prevCart) => {
-            const indexToRemove = prevCart.findIndex(item => item.id === itemToRemove.id);
-            if (indexToRemove === -1) return prevCart;
-
-            const newCart = [...prevCart];
-            newCart.splice(indexToRemove, 1);
-            return newCart;
+            const existingItem = prevCart.find(cartItem => cartItem.name === item.name);
+            return existingItem
+                ? prevCart.map(cartItem =>
+                    cartItem.name === item.name
+                        ? { ...cartItem, quantity: cartItem.quantity + 1 }
+                        : cartItem
+                )
+                : [...prevCart, { ...item, quantity: 1 }];
         });
     };
 
     return (
         <Router>
             <div className="app">
-                <Navbar cartSize={cart.length} />
+                <Navbar cartSize={cart.reduce((total, item) => total + item.quantity, 0)} />
                 <div className="main-content">
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/menu" element={<Menu addToCart={addToCart} />} />
-                        <Route path="/cart" element={<Cart cart={cart} removeFromCart={removeFromCart} />} />
+                        <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
                     </Routes>
                 </div>
                 <Footer />
