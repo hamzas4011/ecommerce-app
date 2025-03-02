@@ -67,11 +67,11 @@
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .quantity-btn:hover {
-    background: #0056b3;
+    background-color: #0056b3;
 }
 
 .quantity {
@@ -86,11 +86,11 @@
     padding: 8px 12px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .remove-button:hover {
-    background: #5a6268;
+    background-color: #5a6268;
 }
 
 .cart-footer {
@@ -118,11 +118,11 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .continue-shopping:hover {
-    background: #457b9d;
+    background-color: #457b9d;
 }
 
 .checkout-btn {
@@ -134,9 +134,9 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .checkout-btn:hover {
-    background: #21867a;
+    background-color: #21867a;
 }
