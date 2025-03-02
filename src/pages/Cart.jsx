@@ -1,72 +1,44 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import "../styles/Cart.css";
+import React, { useState } from "react";
+import "../styles/Menu.css";
+import MenuItem from "../components/MenuItem";
 
-function Cart({ cart, setCart }) {
-    const navigate = useNavigate();
+function Menu({ addToCart }) {
+    const products = [
+        { id: 1, name: 'Gadget 1', price: '$99', image: '/images/gadget-1.webp' },
+        { id: 2, name: 'Gadget 2', price: '$199', image: '/images/gadget-2.webp' },
+        { id: 3, name: 'Gadget 3', price: '$299', image: '/images/gadget-3.webp' },
+        { id: 4, name: 'Gadget 4', price: '$399', image: '/images/gadget-4.webp' },
+        { id: 5, name: 'Gadget 5', price: '$499', image: '/images/gadget-5.webp' },
+        { id: 6, name: 'Gadget 6', price: '$599', image: '/images/gadget-6.webp' },
+        { id: 7, name: 'Gadget 7', price: '$699', image: '/images/gadget-7.webp' },
+        { id: 8, name: 'Gadget 8', price: '$799', image: '/images/gadget-8.webp' },
+    ];
 
-    const updateQuantity = (item, amount) => {
-        setCart((prevCart) =>
-            prevCart.map((cartItem) =>
-                cartItem.name === item.name
-                    ? { ...cartItem, quantity: Math.max(1, cartItem.quantity + amount) }
-                    : cartItem
-            )
-        );
-    };
+    const [visibleProducts, setVisibleProducts] = useState(6);
 
-    const removeFromCart = (item) => {
-        setCart((prevCart) => prevCart.filter((cartItem) => cartItem.name !== item.name));
-    };
-
-    const totalPrice = cart.reduce((sum, item) => sum + item.quantity * parseFloat(item.price.replace("$", "")), 0);
-
-    const handleCheckout = () => {
-        if (cart.length === 0) {
-            alert("Your cart is empty.");
-            return;
-        }
-
-        alert("Payment successful! Thank you for your purchase.");
-        setCart([]);
+    const loadMore = () => {
+        setVisibleProducts((prev) => prev + 3);
     };
 
     return (
-        <div className="cart">
-            <h1>Your Basket</h1>
-            {cart.length === 0 ? (
-                <p className="cart-empty">Your basket is empty.</p>
-            ) : (
-                <div className="cart-items">
-                    {cart.map((item, index) => (
-                        <div key={index} className="cart-item">
-                            <img src={item.image} alt={item.name} className="cart-item-image" />
-                            <div className="cart-item-details">
-                                <h2>{item.name}</h2>
-                                <p>Price: {item.price}</p>
-                                <div className="quantity-controls">
-                                    <button className="quantity-btn" onClick={() => updateQuantity(item, -1)}>-</button>
-                                    <span className="quantity">{item.quantity}</span>
-                                    <button className="quantity-btn" onClick={() => updateQuantity(item, 1)}>+</button>
-                                </div>
-                                <p>Subtotal: ${(item.quantity * parseFloat(item.price.replace("$", ""))).toFixed(2)}</p>
-                            </div>
-                            <button className="remove-button" onClick={() => removeFromCart(item)}>❌</button>
-                        </div>
-                    ))}
-                </div>
-            )}
-            {cart.length > 0 && (
-                <div className="cart-footer">
-                    <h2>Total: ${totalPrice.toFixed(2)}</h2>
-                    <div className="cart-actions">
-                        <button className="continue-shopping" onClick={() => navigate("/menu")}>🛍️ Continue Shopping</button>
-                        <button className="checkout-btn" onClick={handleCheckout}>✅ Checkout</button>
-                    </div>
-                </div>
+        <div className="menu">
+            <h1 className="menu-title">Our Gadgets</h1>
+            <div className="menu-grid">
+                {products.slice(0, visibleProducts).map(product => (
+                    <MenuItem
+                        key={product.id}
+                        name={product.name}
+                        price={product.price}
+                        image={product.image}
+                        addToCart={() => addToCart(product)}
+                    />
+                ))}
+            </div>
+            {visibleProducts < products.length && (
+                <button className="load-more" onClick={loadMore}>Load More</button>
             )}
         </div>
     );
 }
 
-export default Cart;
+export default Menu;
