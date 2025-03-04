@@ -9,13 +9,19 @@
     width: auto;
 }
 
-.footer-about,
+.footer-about {
+    flex: 1;
+    min-width: 280px;
+    max-width: 450px;
+    text-align: left;
+    margin-left: 50px; 
+}
+
 .footer-contact {
     flex: 1;
     min-width: 280px;
-    margin: 10px;
-    text-align: left;
     max-width: 450px;
+    text-align: left;
 }
 
 .footer-title {
