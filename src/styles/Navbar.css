@@ -1,17 +1,18 @@
 .navbar {
   background-color: #6699CC;
-  padding: 20px;
+  padding: 20px 40px;
   color: #fff;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   font-size: 1.2rem;
 }
 
+/* Desktop: Show TechNova logo on the left, links on the right */
 .navbar-container {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
 }
@@ -27,21 +28,15 @@
   letter-spacing: 1.5px;
   text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5), 0 2px 6px rgba(0, 0, 0, 0.2);
   transition: text-shadow 0.3s ease;
-  margin-bottom: 10px;
 }
 
-.navbar-logo:hover {
-  text-shadow: 0 3px 6px rgba(255, 255, 255, 0.7), 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
+/* Navbar Links */
 .navbar-links {
   list-style: none;
   display: flex;
-  gap: 30px;
+  gap: 50px;
   margin: 0;
   padding: 0;
-  justify-content: center;
-  width: 100%;
 }
 
 .navbar-link {
@@ -59,16 +54,29 @@
   color: #ffffff;
 }
 
-/* Mobile Styles */
+/* Mobile: Center TechNova logo above the navbar links */
 @media (max-width: 768px) {
   .navbar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     padding: 15px;
   }
 
+  .navbar-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-logo {
+    margin-bottom: 10px;
+  }
+
   .navbar-links {
-    flex-wrap: wrap;
+    display: flex;
     justify-content: center;
-    gap: 15px;
+    width: 100%;
+    gap: 20px;
   }
 
   .navbar-link {
