@@ -31,7 +31,7 @@
     color: #5d93c0;
 }
 
-/* Dark mode compatibility */
+
 @media (prefers-color-scheme: light) {
     .footer {
         background-color: #f0f0f0;
@@ -39,7 +39,6 @@
     }
 }
 
-/* Mobile Styles */
 @media (max-width: 768px) {
     .footer {
         flex-direction: column;

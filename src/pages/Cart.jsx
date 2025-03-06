@@ -28,7 +28,7 @@ function Cart({ cart, setCart }) {
         }
         alert("Payment successful! Thank you for your purchase.");
         setCart([]); 
-        localStorage.removeItem("cart"); // Clears localStorage after checkout
+        localStorage.removeItem("cart"); 
     };
 
     return (
