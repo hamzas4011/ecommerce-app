@@ -7,7 +7,7 @@ function Footer() {
             <div className="footer-about">
                 <h3 className="footer-title">About TechNova</h3>
                 <p>
-                    TechNova, founded in 2025, is your trusted online store <br />
+                    TechNova, founded in 2025, is your trusted online store
                     for the latest tech gadgets and innovations.
                 </p>
             </div>
