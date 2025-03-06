@@ -32,7 +32,7 @@ function Cart({ cart, setCart }) {
     };
 
     return (
-        <div className="cart-container">
+        <div className="cart-wrapper">
             <div className="cart">
                 <h1>Your Basket</h1>
                 {cart.length === 0 ? (

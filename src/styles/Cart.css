@@ -1,10 +1,9 @@
-.cart-container {
+.cart-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f4f4f4;
-    padding: 20px;
+    width: 100%;
 }
 
 .cart {
@@ -146,7 +145,7 @@
 }
 
 @media (max-width: 768px) {
-    .cart-container {
+    .cart-wrapper {
         padding: 10px;
     }
 
