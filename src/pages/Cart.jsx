@@ -32,39 +32,41 @@ function Cart({ cart, setCart }) {
     };
 
     return (
-        <div className="cart">
-            <h1>Your Basket</h1>
-            {cart.length === 0 ? (
-                <p className="cart-empty">Your basket is empty.</p>
-            ) : (
-                <div className="cart-items">
-                    {cart.map((item, index) => (
-                        <div key={index} className="cart-item">
-                            <img src={item.image} alt={item.name} className="cart-item-image" />
-                            <div className="cart-item-details">
-                                <h2>{item.name}</h2>
-                                <p>Price: {item.price}</p>
-                                <div className="quantity-controls">
-                                    <button className="quantity-btn" onClick={() => updateQuantity(item, -1)}>-</button>
-                                    <span className="quantity">{item.quantity}</span>
-                                    <button className="quantity-btn" onClick={() => updateQuantity(item, 1)}>+</button>
+        <div className="cart-container">
+            <div className="cart">
+                <h1>Your Basket</h1>
+                {cart.length === 0 ? (
+                    <p className="cart-empty">Your basket is empty.</p>
+                ) : (
+                    <div className="cart-items">
+                        {cart.map((item, index) => (
+                            <div key={index} className="cart-item">
+                                <img src={item.image} alt={item.name} className="cart-item-image" />
+                                <div className="cart-item-details">
+                                    <h2>{item.name}</h2>
+                                    <p>Price: {item.price}</p>
+                                    <div className="quantity-controls">
+                                        <button className="quantity-btn" onClick={() => updateQuantity(item, -1)}>-</button>
+                                        <span className="quantity">{item.quantity}</span>
+                                        <button className="quantity-btn" onClick={() => updateQuantity(item, 1)}>+</button>
+                                    </div>
+                                    <p>Subtotal: ${(item.quantity * parseFloat(item.price.replace(/[^\d.]/g, ""))).toFixed(2)}</p>
                                 </div>
-                                <p>Subtotal: ${(item.quantity * parseFloat(item.price.replace(/[^\d.]/g, ""))).toFixed(2)}</p>
+                                <button className="remove-button" onClick={() => removeFromCart(item)}>❌</button>
                             </div>
-                            <button className="remove-button" onClick={() => removeFromCart(item)}>❌</button>
-                        </div>
-                    ))}
-                </div>
-            )}
-            {cart.length > 0 && (
-                <div className="cart-footer">
-                    <h2>Total: ${totalPrice.toFixed(2)}</h2>
-                    <div className="cart-actions">
-                        <button className="continue-shopping" onClick={() => navigate("/menu")}>🛍️ Continue Shopping</button>
-                        <button className="checkout-btn" onClick={handleCheckout}>✅ Checkout</button>
+                        ))}
                     </div>
-                </div>
-            )}
+                )}
+                {cart.length > 0 && (
+                    <div className="cart-footer">
+                        <h2>Total: ${totalPrice.toFixed(2)}</h2>
+                        <div className="cart-actions">
+                            <button className="continue-shopping" onClick={() => navigate("/menu")}>🛍️ Continue Shopping</button>
+                            <button className="checkout-btn" onClick={handleCheckout}>✅ Checkout</button>
+                        </div>
+                    </div>
+                )}
+            </div>
         </div>
     );
 }
