@@ -169,9 +169,20 @@
         max-width: 100%;
     }
 
+    .cart-item-image {
+        width: 100px;
+        height: 100px;
+    }
+
     .cart-item-details {
+        width: 100%;
         margin-left: 0;
         text-align: center;
+        padding: 10px;
+    }
+
+    .quantity-controls {
+        justify-content: center;
     }
 
     .cart-actions {
