@@ -31,7 +31,7 @@
   letter-spacing: 1.5px;
   text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5), 0 2px 6px rgba(0, 0, 0, 0.2);
   transition: text-shadow 0.3s ease;
-  margin-left: 30px; /* Adjust for better centering */
+  margin-left: 30px; 
   flex-shrink: 0;
 }
 
@@ -58,7 +58,7 @@
   color: #ffffff;
 }
 
-/* Mobile Styles */
+
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -75,7 +75,7 @@
   }
 
   .navbar-logo {
-    margin: 0 auto 10px auto; /* Center the logo */
+    margin: 0 auto 10px auto; 
     text-align: center;
   }
 
