@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/Cart.mdodule.css";
+import "../styles/Cart.css";
 
 function Cart({ cart, setCart }) {
     const navigate = useNavigate();

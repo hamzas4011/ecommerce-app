@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/Navbar.module.css';
+import '../styles/Navbar.css';
 
 function Navbar({ cartSize }) {
     return (
