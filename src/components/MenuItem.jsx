@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../styles/Menu.css";
+import "../styles/Menu.module.css";
 
 function MenuItem({ name, price, image, addToCart }) {
     const [added, setAdded] = useState(false);

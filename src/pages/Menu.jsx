@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/Menu.css';
+import '../styles/Menu.module.css';
 import MenuItem from '../components/MenuItem';
 
 function Menu({ addToCart }) {
