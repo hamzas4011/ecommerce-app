@@ -17,6 +17,7 @@ function Home() {
                 src="/images/tech-gadget.jpg" 
                 alt="Tech gadget" 
                 className="home-image" 
+                loading="lazy"
             />
         </div>
     );
