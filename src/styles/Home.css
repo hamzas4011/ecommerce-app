@@ -46,6 +46,7 @@
   background: var(--primary-gradient);
   color: white;
   padding: 1rem 2.5rem;
+  min-height: 44px;
   border-radius: 50px;
   font-weight: 600;
   font-size: 1.1rem;
@@ -54,6 +55,11 @@
   position: relative;
   overflow: hidden;
   animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.home-shop-now:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 3px;
 }
 
 .home-shop-now::before {

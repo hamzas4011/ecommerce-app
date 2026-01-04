@@ -11,6 +11,7 @@
 
 .cart {
     background: var(--card-bg);
+    -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     border: 1px solid var(--glass-border);
     padding: 2.5rem;
@@ -49,6 +50,7 @@
     display: flex;
     align-items: center;
     background: rgba(255, 255, 255, 0.03);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border: 1px solid var(--glass-border);
     padding: 1.5rem;
@@ -104,6 +106,7 @@
     color: var(--text-primary);
     width: 36px;
     height: 36px;
+    min-width: 36px;
     border-radius: 8px;
     font-size: 1.2rem;
     font-weight: 600;
@@ -114,10 +117,25 @@
     cursor: pointer;
 }
 
+.quantity-btn:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
 .quantity-btn:hover {
     background: var(--primary-gradient);
     border-color: transparent;
     transform: scale(1.1);
+}
+
+.quantity-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.quantity-btn:disabled:hover {
+    transform: none;
+    background: var(--card-bg);
 }
 
 .quantity {
@@ -133,11 +151,21 @@
     border: 1px solid rgba(244, 67, 54, 0.3);
     color: #ff5252;
     padding: 0.5rem 1rem;
+    min-width: 44px;
+    min-height: 44px;
     border-radius: 8px;
     font-size: 1.2rem;
     cursor: pointer;
     transition: all 0.2s ease;
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.remove-button:focus-visible {
+    outline: 3px solid #ff5252;
+    outline-offset: 2px;
 }
 
 .remove-button:hover {
@@ -177,6 +205,13 @@
     cursor: pointer;
     transition: all 0.3s ease;
     min-width: 200px;
+    min-height: 44px;
+}
+
+.continue-shopping:focus-visible,
+.checkout-btn:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 3px;
 }
 
 .continue-shopping {

@@ -13,9 +13,9 @@ function Menu({ addToCart }) {
     ];
 
     return (
-        <div className="menu">
+        <main className="menu" role="main" aria-label="Product catalog">
             <h1 className="menu-title">Our Gadgets</h1>
-            <div className="menu-grid">
+            <div className="menu-grid" role="list" aria-label="Available products">
                 {products.map(product => (
                     <MenuItem
                         key={product.id}
@@ -27,7 +27,7 @@ function Menu({ addToCart }) {
                     />
                 ))}
             </div>
-        </div>
+        </main>
     );
 }
 
