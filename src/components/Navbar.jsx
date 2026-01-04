@@ -11,8 +11,9 @@ function Navbar({ cartSize }) {
                     <li><Link to="/" className="navbar-link">Home</Link></li>
                     <li><Link to="/menu" className="navbar-link">Menu</Link></li>
                     <li>
-                        <Link to="/cart" className="navbar-link">
-                            🛒 Basket ({cartSize})
+                        <Link to="/cart" className="navbar-link cart-link">
+                            <span>🛒</span> Cart
+                            {cartSize > 0 && <span className="cart-badge">{cartSize}</span>}
                         </Link>
                     </li>
                 </ul>
