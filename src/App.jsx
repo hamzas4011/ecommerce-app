@@ -32,8 +32,9 @@ function App() {
     return (
         <Router>
             <div className="app">
+                <a href="#main-content" className="skip-link">Skip to main content</a>
                 <Navbar cartSize={cart.reduce((total, item) => total + item.quantity, 0)} />
-                <div className="main-content">
+                <div id="main-content" className="main-content">
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/menu" element={<Menu addToCart={addToCart} />} />
